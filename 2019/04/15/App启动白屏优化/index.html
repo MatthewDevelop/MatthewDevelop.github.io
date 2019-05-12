@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="最近优化一套老代码，程序运行起来，app启动会经过一个4秒左右的白屏状态，才会显示出UI界面，本篇记录解决app白屏的过程。  现象桌面点击App图标，App启动会出现一段时间的白屏或者黑屏状态，再完成UI加载，用户体验差。 原因剖析当打开一个Activity时，如果这个Activity所属Application还没有在运行，系统会为这个Activity的创建一个进程（每开启一个进程都会有一个A">
+  <meta name="description" content="最近优化一套老代码，程序运行起来，app启动会经过一个4秒左右的白屏状态，才会显示出UI界面，本篇记录解决app白屏的过程。  现象桌面点击App图标，App启动会出现一段时间的白屏或者黑屏状态，再完成UI加载，用户体验差。">
 <meta name="keywords" content="优化,启动,重构,白屏">
 <meta property="og:type" content="article">
 <meta property="og:title" content="App启动白屏优化">
 <meta property="og:url" content="https://matthewdevelop.github.io/2019/04/15/App启动白屏优化/index.html">
 <meta property="og:site_name" content="Matthew&#39;s Blog">
-<meta property="og:description" content="最近优化一套老代码，程序运行起来，app启动会经过一个4秒左右的白屏状态，才会显示出UI界面，本篇记录解决app白屏的过程。  现象桌面点击App图标，App启动会出现一段时间的白屏或者黑屏状态，再完成UI加载，用户体验差。 原因剖析当打开一个Activity时，如果这个Activity所属Application还没有在运行，系统会为这个Activity的创建一个进程（每开启一个进程都会有一个A">
+<meta property="og:description" content="最近优化一套老代码，程序运行起来，app启动会经过一个4秒左右的白屏状态，才会显示出UI界面，本篇记录解决app白屏的过程。  现象桌面点击App图标，App启动会出现一段时间的白屏或者黑屏状态，再完成UI加载，用户体验差。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T08:11:10.903Z">
+<meta property="og:updated_time" content="2019-05-12T08:13:55.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="App启动白屏优化">
-<meta name="twitter:description" content="最近优化一套老代码，程序运行起来，app启动会经过一个4秒左右的白屏状态，才会显示出UI界面，本篇记录解决app白屏的过程。  现象桌面点击App图标，App启动会出现一段时间的白屏或者黑屏状态，再完成UI加载，用户体验差。 原因剖析当打开一个Activity时，如果这个Activity所属Application还没有在运行，系统会为这个Activity的创建一个进程（每开启一个进程都会有一个A">
+<meta name="twitter:description" content="最近优化一套老代码，程序运行起来，app启动会经过一个4秒左右的白屏状态，才会显示出UI界面，本篇记录解决app白屏的过程。  现象桌面点击App图标，App启动会出现一段时间的白屏或者黑屏状态，再完成UI加载，用户体验差。">
 
 
 
@@ -403,7 +403,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-12 16:11:10" itemprop="dateModified" datetime="2019-05-12T16:11:10+08:00">2019-05-12</time>
+                <time title="修改时间：2019-05-12 16:13:55" itemprop="dateModified" datetime="2019-05-12T16:13:55+08:00">2019-05-12</time>
               
             
           </span>
@@ -441,6 +441,7 @@
 <p>最近优化一套老代码，程序运行起来，app启动会经过一个4秒左右的白屏状态，才会显示出UI界面，本篇记录解决app白屏的过程。</p>
 </blockquote>
 <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>桌面点击App图标，App启动会出现一段时间的白屏或者黑屏状态，再完成UI加载，用户体验差。</p>
+<a id="more"></a>
 <h2 id="原因剖析"><a href="#原因剖析" class="headerlink" title="原因剖析"></a>原因剖析</h2><p>当打开一个Activity时，如果这个Activity所属Application还没有在运行，系统会为这个Activity的创建一个进程（每开启一个进程都会有一个Application，所以Application的onCreate()可能会被调用多次），但进程的创建与初始化都需要时间，在这个动作完成之前，如果初始化的时间过长，屏幕上可能没有任何动静，用户会以为没有点到按钮。所以既不能停在原来的地方又没到显示新的界面，怎么办呢？这就有了StartingWindow（也称之为PreviewWindow）的出现，这样看起来就像Activity已经启动起来了，只是数据内容还没有初始化好。    </p>
 <p>StartingWindow一般出现在应用程序进程创建并初始化成功前，所以它是个临时窗口，对应的WindowType是TYPE_APPLICATION_STARTING。目的是告诉用户，系统已经接受到操作，正在响应，在程序初始化完成后实现目的UI，同时移除这个窗口。     </p>
 <p>StartingWindow就是app启动白屏或者黑屏的原因。</p>
