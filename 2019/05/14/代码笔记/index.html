@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="这段时间">
-<meta name="keywords" content="HTTP,网络请求,AES,签名">
+  <meta name="description" content="这篇博客记录一些小的代码知识点  文件计算SD卡剩余空间百分比 主要涉及到long型的变量的除法运算">
+<meta name="keywords" content="代码,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP请求数据加密以及加签校验">
-<meta property="og:url" content="https://matthewdevelop.github.io/2019/03/08/HTTP请求数据加密以及加签校验/index.html">
+<meta property="og:title" content="代码笔记">
+<meta property="og:url" content="https://matthewdevelop.github.io/2019/05/14/代码笔记/index.html">
 <meta property="og:site_name" content="Matthew&#39;s Blog">
-<meta property="og:description" content="这段时间">
+<meta property="og:description" content="这篇博客记录一些小的代码知识点  文件计算SD卡剩余空间百分比 主要涉及到long型的变量的除法运算">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T08:15:31.224Z">
+<meta property="og:updated_time" content="2019-05-14T14:05:57.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTTP请求数据加密以及加签校验">
-<meta name="twitter:description" content="这段时间">
+<meta name="twitter:title" content="代码笔记">
+<meta name="twitter:description" content="这篇博客记录一些小的代码知识点  文件计算SD卡剩余空间百分比 主要涉及到long型的变量的除法运算">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://matthewdevelop.github.io/2019/03/08/HTTP请求数据加密以及加签校验/">
+  <link rel="canonical" href="https://matthewdevelop.github.io/2019/05/14/代码笔记/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>HTTP请求数据加密以及加签校验 | Matthew's Blog</title>
+  <title>代码笔记 | Matthew's Blog</title>
   
 
 
@@ -343,7 +343,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://matthewdevelop.github.io/2019/03/08/HTTP请求数据加密以及加签校验/">
+    <link itemprop="mainEntityOfPage" href="https://matthewdevelop.github.io/2019/05/14/代码笔记/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Matthew">
@@ -360,7 +360,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP请求数据加密以及加签校验
+          <h1 class="post-title" itemprop="name headline">代码笔记
 
               
             
@@ -386,24 +386,12 @@
                 
               
 
-              <time title="创建时间：2019-03-08 14:20:22" itemprop="dateCreated datePublished" datetime="2019-03-08T14:20:22+08:00">2019-03-08</time>
+              <time title="创建时间：2019-05-14 21:51:29 / 修改时间：22:05:57" itemprop="dateCreated datePublished" datetime="2019-05-14T21:51:29+08:00">2019-05-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-12 16:15:31" itemprop="dateModified" datetime="2019-05-12T16:15:31+08:00">2019-05-12</time>
               
             
           </span>
@@ -438,8 +426,13 @@
 
       
         <blockquote>
-<p>这段时间</p>
+<p>这篇博客记录一些小的代码知识点</p>
 </blockquote>
+<h1 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h1><h2 id="计算SD卡剩余空间百分比"><a href="#计算SD卡剩余空间百分比" class="headerlink" title="计算SD卡剩余空间百分比"></a>计算SD卡剩余空间百分比</h2><blockquote>
+<p>主要涉及到<code>long</code>型的变量的除法运算</p>
+</blockquote>
+<a id="more"></a>
+<p>代码如下:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取当前sd卡可用空间占比</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> -1 sd卡不存在  0~100可用百分比</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getFreeSapcePercentage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (checkIsSdcardAvailable()) &#123;</span><br><span class="line">        <span class="keyword">long</span> freeSpace = Environment.getExternalStorageDirectory().getFreeSpace();</span><br><span class="line">        <span class="keyword">return</span> getTargetSpacePercentage(freeSpace);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 计算目标空间占总空间的百分比</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> space 目标空间大小</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> percentage</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getTargetSpacePercentage</span><span class="params">(<span class="keyword">long</span> space)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//将long型的数据转换为BigDecimal再进行除法运算，最后取两位小数</span></span><br><span class="line">    BigDecimal percent = BigDecimal.valueOf(space).</span><br><span class="line">            divide(BigDecimal.valueOf(Environment.getExternalStorageDirectory().getTotalSpace()),</span><br><span class="line">                    <span class="keyword">new</span> MathContext(<span class="number">2</span>));</span><br><span class="line">    <span class="comment">//BigDecimal转换为float乘以100再强转为整形即得到百分比</span></span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) (percent.floatValue() * <span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 检测sd卡是否可用</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> true 可用  false 不可用</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">checkIsSdcardAvailable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String state = Environment.getExternalStorageState();</span><br><span class="line">    <span class="keyword">return</span> Environment.MEDIA_MOUNTED.equals(state);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -463,13 +456,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+            <a href="/tags/代码/" rel="tag"># 代码</a>
           
-            <a href="/tags/网络请求/" rel="tag"># 网络请求</a>
-          
-            <a href="/tags/AES/" rel="tag"># AES</a>
-          
-            <a href="/tags/签名/" rel="tag"># 签名</a>
+            <a href="/tags/笔记/" rel="tag"># 笔记</a>
           
         </div>
       
@@ -482,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/05/Android面试笔记/" rel="next" title="Android面试笔记">
-                <i class="fa fa-chevron-left"></i> Android面试笔记
+              <a href="/2019/04/15/App启动白屏优化/" rel="next" title="App启动白屏优化">
+                <i class="fa fa-chevron-left"></i> App启动白屏优化
               </a>
             
           </div>
@@ -491,10 +480,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/08/GitHub静态博客绑定自定义域名/" rel="prev" title="GitHub静态博客绑定自定义域名">
-                GitHub静态博客绑定自定义域名 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -617,7 +611,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -643,6 +641,17 @@
                   <a href="https://github.com/MatthewDevelop" title="GitHub &rarr; https://github.com/MatthewDevelop" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
                 </span>
               
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:guocheng0816@163.com" title="E-Mail &rarr; mailto:guocheng0816@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
             </div>
           
 
@@ -650,15 +659,19 @@
 
           
           
-            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-link"></i>
-                Links
+                友情链接
               </div>
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="/llcat.tech" title="llcat.tech">llcat</a>
+                    <a href="http://llcat.tech" title="http://llcat.tech" rel="noopener" target="_blank">llcat</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jarh.tech/" title="https://jarh.tech/" rel="noopener" target="_blank">rh</a>
                   </li>
                 
               </ul>
@@ -673,6 +686,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件"><span class="nav-number">1.</span> <span class="nav-text">文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算SD卡剩余空间百分比"><span class="nav-number">1.1.</span> <span class="nav-text">计算SD卡剩余空间百分比</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
