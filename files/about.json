@@ -1,5 +1,1 @@
-{
-  "code": 200,
-  "message": "OK",
-  "data": "欢迎使用"
-}
+{"code":200,"message":"OK","data":"欢迎使用"}
