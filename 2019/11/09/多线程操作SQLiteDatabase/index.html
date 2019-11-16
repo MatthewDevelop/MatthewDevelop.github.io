@@ -96,16 +96,20 @@
 
 
 
-  <meta name="description" content="记录一下学习、工作笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Matthew&#39;s Blog">
-<meta property="og:url" content="https://blog.matthewdev.tech/tags/面试/index.html">
+  <meta name="description" content="问题产生初始缘由 前天有个客户反应在公司的智能售货柜上消费，没有产生订单。这不是等于白嫖？赶紧瞅瞅！抓回来日志看了一下，发现了问题。这台柜子网络信号非常非常非常的差，WebSocket发送的订单消息竟然没有成功抵达服务器，订单数据没有到服务器，当然产生不了数据。如此之大的漏洞，赶紧修复～">
+<meta name="keywords" content="数据库,DataBase,SQLiteDataBase">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程操作SQLiteDatabase">
+<meta property="og:url" content="https://blog.matthewdev.tech/2019/11/09/多线程操作SQLiteDatabase/index.html">
 <meta property="og:site_name" content="Matthew&#39;s Blog">
-<meta property="og:description" content="记录一下学习、工作笔记">
+<meta property="og:description" content="问题产生初始缘由 前天有个客户反应在公司的智能售货柜上消费，没有产生订单。这不是等于白嫖？赶紧瞅瞅！抓回来日志看了一下，发现了问题。这台柜子网络信号非常非常非常的差，WebSocket发送的订单消息竟然没有成功抵达服务器，订单数据没有到服务器，当然产生不了数据。如此之大的漏洞，赶紧修复～">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006KjR9nly1g8zz3xty8gj30os0580tc.jpg">
+<meta property="og:updated_time" content="2019-11-16T11:02:30.720Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Matthew&#39;s Blog">
-<meta name="twitter:description" content="记录一下学习、工作笔记">
+<meta name="twitter:title" content="多线程操作SQLiteDatabase">
+<meta name="twitter:description" content="问题产生初始缘由 前天有个客户反应在公司的智能售货柜上消费，没有产生订单。这不是等于白嫖？赶紧瞅瞅！抓回来日志看了一下，发现了问题。这台柜子网络信号非常非常非常的差，WebSocket发送的订单消息竟然没有成功抵达服务器，订单数据没有到服务器，当然产生不了数据。如此之大的漏洞，赶紧修复～">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/006KjR9nly1g8zz3xty8gj30os0580tc.jpg">
 
 
 
@@ -113,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="https://blog.matthewdev.tech/tags/面试/">
+  <link rel="canonical" href="https://blog.matthewdev.tech/2019/11/09/多线程操作SQLiteDatabase/">
 
 
 
@@ -123,7 +127,7 @@
   };
 </script>
 
-  <title>标签: 面试 | Matthew's Blog</title>
+  <title>多线程操作SQLiteDatabase | Matthew's Blog</title>
   
 
 
@@ -171,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -226,7 +230,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -321,103 +325,219 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>面试<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.matthewdev.tech/2019/11/09/多线程操作SQLiteDatabase/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Matthew">
+      <meta itemprop="description" content="记录一下学习、工作笔记">
+      <meta itemprop="image" content="https://s1.ax1x.com/2018/11/24/FFakY8.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Matthew's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/03/14/面试凉凉经/" itemprop="url">
-            
-              <span itemprop="name">面试凉凉经</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">多线程操作SQLiteDatabase
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-14T21:58:19+08:00" content="2019-03-14">
-          03-14
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-11-09 09:43:53" itemprop="dateCreated datePublished" datetime="2019-11-09T09:43:53+08:00">2019-11-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-11-16 19:02:30" itemprop="dateModified" datetime="2019-11-16T19:02:30+08:00">2019-11-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/03/05/Android面试笔记/" itemprop="url">
-            
-              <span itemprop="name">Android面试笔记</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-05T11:00:12+08:00" content="2019-03-05">
-          03-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h1 id="问题产生初始缘由"><a href="#问题产生初始缘由" class="headerlink" title="问题产生初始缘由"></a>问题产生初始缘由</h1><blockquote>
+<p>前天有个客户反应在公司的智能售货柜上消费，没有产生订单。这不是等于白嫖？赶紧瞅瞅！<br>抓回来日志看了一下，发现了问题。这台柜子网络信号非常非常非常的差，WebSocket发送的订单消息竟然没有成功抵达服务器，订单数据没有到服务器，当然产生不了数据。如此之大的漏洞，赶紧修复～</p>
+</blockquote>
+<a id="more"></a>
+<p>与后端大佬商量了一下对策，给我个接口查询<code>订单key1</code>对应订单状态。<em>安卓端则在本地创建一个数据库，存储用户关门后产生的订单信息，并定时从数据库检索订单数据，与服务端确认对应订单是否已经产生，订单已产生则删除该订单本地记录，订单未产生则重新推送订单信息并保留本地数据，直至下一个周期重新确认该订单是否产生，确保订单信息已产生后，再删除本地记录。</em></p>
+<p>确定了方案就赶紧撸代码。<em>本地创建一张表，主键是自增长的id，<code>Integer</code>类型；还有一个字段是订单独一无二的key1，<code>text</code>类型；订单数据信息字段data，<code>text</code>类型；订单状态字段deleted，<code>Integer</code>类型。线程池中添加一个每隔二十分钟执行的定时任务，从数据库中查询，订单删除状态为<code>0</code>的数据，根据key1向后端查询该订单是否生成。已经生成则将订单删除状态从<code>0</code>改到<code>1</code>,表示该订单已经生成，下一次无需查询该订单；未生成订单的数据则再次通过<code>websocket</code>推送订单信息到服务器，确保所有的订单都有效都生成。</em></p>
+<p>代码修改好,打包Apk上传到服务器，首先推送到4台设备上升级。</p>
+<p>过了一个小时，刷新了一下bugly，我靠，真的有bug。如下图：</p>
+<p><img src="http://ww1.sinaimg.cn/large/006KjR9nly1g8zz3xty8gj30os0580tc.jpg" alt="bugly"></p>
+<p>错误提示非常明显：不能执行操作，因为数据链接池已经关闭。</p>
+<p>我的代码中，每次操作数据库之后都会关闭链接，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 逻辑删除订单信息</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> key1 key1</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> result</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">logicDelete</span><span class="params">(String key1)</span> </span>&#123;</span><br><span class="line">    SQLiteDatabase db = mHelper.getWritableDatabase();</span><br><span class="line">    ContentValues contentValues = <span class="keyword">new</span> ContentValues();</span><br><span class="line">    contentValues.put(<span class="string">"deleted"</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> num = db.update(TABLE_NAME, contentValues, <span class="string">"key1=?"</span>, <span class="keyword">new</span> String[]&#123;key1&#125;);</span><br><span class="line">    <span class="comment">//关闭数据库</span></span><br><span class="line">    db.close();</span><br><span class="line">    <span class="keyword">return</span> num != <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码，是单次操作一条数据，如果一个定时周期内产生了多条需要确认的订单，那么就可能会出现连续多次打开和关闭数据库的情况。经过我的实验发现，使用同一个<code>DataBaseHelper</code>对象打开一个数据库时，如果当前有未关闭的数据库链接对象，则会直接返回当前<code>SQLiteDatabase</code>对象。那么就会出现上述的问题：<strong>连续执行数据库操作时，打开数据库时，返回的是同一个数据库对象，但是在操作数据库的时侯，出现前面的操作完成关闭了数据库，后面的操作继续操作数据库，那么就会抛出上面链接池已经被关闭的异常</strong>。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><blockquote>
+<p>解决方法应该有很多，思想是，当所有的数据库操作都执行完毕之后，再关闭数据库。我这边写两种方法：</p>
+</blockquote>
+<h2 id="创建全局唯一的数据库链接"><a href="#创建全局唯一的数据库链接" class="headerlink" title="创建全局唯一的数据库链接"></a>创建全局唯一的数据库链接</h2><p>我没有使用这种方式，但思路应该是在<code>Activity</code>或者<code>Application</code>启动的时侯打开一个数据库链接，在<code>Activity</code>运行时或者程序运行时的数据库操作均使用同一个数据库链接，至于关闭链接则是在<code>Activity</code>或者<code>Application</code>退出时调用<code>close()</code>方法关闭链接。</p>
+<p>我觉得程序运行过程中，操作数据库的地方有限，采用这种方式让数据库一直保持打开状态，会造成资源的浪费（虽然<code>StackOverflow</code>上有人推荐保持数据库打开）,我没有深入研究对程序有多大影响。我认为数据库用完就关，应该是正确的姿势，所以我推荐后面一种方式。</p>
+<h2 id="用线程安全的数据库管理类来管理数据库链接"><a href="#用线程安全的数据库管理类来管理数据库链接" class="headerlink" title="用线程安全的数据库管理类来管理数据库链接"></a>用线程安全的数据库管理类来管理数据库链接</h2><blockquote>
+<p>思路是，使用一个线程安全的原子整形变量(<code>AtomicInteger</code>)来记录当前程序打开数据库的次数。打开数据库时，如果打开次数为零时打开一个新的数据链接，次数加1；如果打开次数不为零时，则返回已经打开的数据库链接对象，并把次数加1。关闭数据库时，如果打开次数为1时，则直接关闭数据库，并把次数减1；如果打开次数大于1，则不关闭数据库，但是次数减1。管理类使用单例设计模式，这样既保证来所有线程操作数据库时使用的是同一个数据链接，也保证了所有数据库操作结束再关闭数据库链接。</p>
+</blockquote>
+<p>代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hgobox.hgobox.manage;</span><br><span class="line"><span class="keyword">import</span> android.content.Context;</span><br><span class="line"><span class="keyword">import</span> android.database.sqlite.SQLiteDatabase;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.atomic.AtomicInteger;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Author:matthew</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * Date:2019-11-08 19:52</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * Email:guocheng0816@163.com</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;</span></span><br><span class="line"><span class="comment"> * Desc:数据库链接管理</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DBManager</span> </span>&#123;</span><br><span class="line">    <span class="comment">//线程安全的原子变量记录数据库的打开此时</span></span><br><span class="line">    <span class="keyword">private</span> AtomicInteger mConnectionCount = <span class="keyword">new</span> AtomicInteger();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> DBManager INSTANCE;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> DataBaseHelper HELPER;</span><br><span class="line">    <span class="keyword">private</span> SQLiteDatabase mDatabase;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 初始化</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> context</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">initInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (INSTANCE == <span class="keyword">null</span>) &#123;</span><br><span class="line">            INSTANCE = <span class="keyword">new</span> DBManager();</span><br><span class="line">            HELPER = <span class="keyword">new</span> DataBaseHelper(context);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取工具类实例</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> context</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> DBManager <span class="title">getInstance</span><span class="params">(Context context)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (INSTANCE == <span class="keyword">null</span>) &#123;</span><br><span class="line">            initInstance(context);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取可读写的数据库</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> database</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> SQLiteDatabase <span class="title">getWritableDataBase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//打开次数+1</span></span><br><span class="line">        <span class="keyword">if</span> (mConnectionCount.incrementAndGet() == <span class="number">1</span>) &#123;</span><br><span class="line">            mDatabase = HELPER.getWritableDatabase();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mDatabase;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取只读的数据库</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> database</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> SQLiteDatabase <span class="title">getReadableDataBase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//打开次数+1</span></span><br><span class="line">        <span class="keyword">if</span> (mConnectionCount.incrementAndGet() == <span class="number">1</span>) &#123;</span><br><span class="line">            mDatabase = HELPER.getReadableDatabase();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mDatabase;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 链接数为零的时候关闭数据库</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">closeDatabase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//打开次数-1</span></span><br><span class="line">        <span class="keyword">if</span> (mConnectionCount.decrementAndGet() == <span class="number">0</span>) &#123;</span><br><span class="line">            mDatabase.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>代码中方法都使用<code>synchronized</code>关键字修饰，保证多线程操作时的线程安全。</strong></p>
+<p>代码已经运行了好多天了，Bugly没有上报异常～</p>
+<blockquote>
+<p>以上记录一次踩坑～</p>
+</blockquote>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+            <a href="/tags/DataBase/" rel="tag"># DataBase</a>
+          
+            <a href="/tags/SQLiteDataBase/" rel="tag"># SQLiteDataBase</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/14/代码笔记/" rel="next" title="代码笔记">
+                <i class="fa fa-chevron-left"></i> 代码笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -437,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -590,6 +719,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题产生初始缘由"><span class="nav-number">1.</span> <span class="nav-text">问题产生初始缘由</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建全局唯一的数据库链接"><span class="nav-number">2.1.</span> <span class="nav-text">创建全局唯一的数据库链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用线程安全的数据库管理类来管理数据库链接"><span class="nav-number">2.2.</span> <span class="nav-text">用线程安全的数据库管理类来管理数据库链接</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -720,6 +866,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -735,6 +885,8 @@
 
   
 
+
+  
 
 
   
