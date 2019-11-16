@@ -44,13 +44,6 @@
   </url>
   
   <url>
-    <loc>https://blog.matthewdev.tech/files/order_list_pay.json</loc>
-    
-    <lastmod>2019-04-13T12:33:34.921Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.matthewdev.tech/files/order_list_evaluate.json</loc>
     
     <lastmod>2019-04-13T12:33:34.921Z</lastmod>
@@ -58,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://blog.matthewdev.tech/files/order_list_receive.json</loc>
+    <loc>https://blog.matthewdev.tech/files/order_list_pay.json</loc>
     
     <lastmod>2019-04-13T12:33:34.921Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.matthewdev.tech/files/shop_cart_data.json</loc>
+    <loc>https://blog.matthewdev.tech/files/order_list_receive.json</loc>
     
     <lastmod>2019-04-13T12:33:34.921Z</lastmod>
     
@@ -80,6 +73,13 @@
   
   <url>
     <loc>https://blog.matthewdev.tech/files/user_profile.json</loc>
+    
+    <lastmod>2019-04-13T12:33:34.921Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.matthewdev.tech/files/shop_cart_data.json</loc>
     
     <lastmod>2019-04-13T12:33:34.921Z</lastmod>
     
