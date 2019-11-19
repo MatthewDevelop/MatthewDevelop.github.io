@@ -114,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://blog.matthewdev.tech/files/index.json</loc>
-    
-    <lastmod>2019-04-13T12:33:34.920Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.matthewdev.tech/files/goods_detail.1.json</loc>
     
     <lastmod>2019-04-13T12:33:34.920Z</lastmod>
@@ -128,7 +121,7 @@
   </url>
   
   <url>
-    <loc>https://blog.matthewdev.tech/files/order_list_after_sale.json</loc>
+    <loc>https://blog.matthewdev.tech/files/index.json</loc>
     
     <lastmod>2019-04-13T12:33:34.920Z</lastmod>
     
@@ -136,6 +129,13 @@
   
   <url>
     <loc>https://blog.matthewdev.tech/files/order_list_all.json</loc>
+    
+    <lastmod>2019-04-13T12:33:34.920Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.matthewdev.tech/files/order_list_after_sale.json</loc>
     
     <lastmod>2019-04-13T12:33:34.920Z</lastmod>
     
